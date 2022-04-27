@@ -15,7 +15,7 @@ function calcular(tipo, valor){
             
         }
         
-        if(valor === '+' || valor === '-' || valor === '*' || valor === '/' || valor === '%' || valor === ',') {
+        if(valor === '+' || valor === '-' || valor === '*' || valor === '/' || valor === '%' || valor === '.') {
             document.getElementById('resultado').value += valor;
         }
 
@@ -26,8 +26,14 @@ function calcular(tipo, valor){
 
         if(valor === '²√x') {
             const raiz = document.getElementById('resultado').value;
-            const resRaiz = Math.sqrt(raiz)
+            const resRaiz = Math.sqrt(raiz);
             document.getElementById('resultado').value = resRaiz;
+        }
+
+        if(valor === '+/-') {
+            const maisOuMenos = document.getElementById('resultado').value;
+            const resMaisOuMenos = Math.round(maisOuMenos);
+            document.getElementById('resultado').value = resMaisOuMenos;
         }
 
         if(valor === '='){
